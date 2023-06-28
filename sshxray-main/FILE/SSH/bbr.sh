@@ -13,7 +13,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/mmfteam/tollls/main/akses > /root/tmp
+    curl -sS https://raw.githubusercontent.com/mmfteam/folder634261730/master/sshxray-main/akses > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -30,8 +30,8 @@ BURIQ () {
     rm -f /root/tmp
 }
 
-MYIP=$(curl -sS mmfteam.me/ip.php)
-Name=$(curl -sS https://raw.githubusercontent.com/mmfteam/tollls/main/akses | grep $MYIP | awk '{print $2}')
+MYIP=$(curl -sS ipv4.icanhazip.com)
+Name=$(curl -sS https://raw.githubusercontent.com/mmfteam/folder634261730/master/sshxray-main/akses | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -47,8 +47,8 @@ fi
 }
 
 PERMISSION () {
-    MYIP=$(curl -sS mmfteam.me/ip.php)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/mmfteam/tollls/main/akses | awk '{print $4}' | grep $MYIP)
+    MYIP=$(curl -sS ipv4.icanhazip.com)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/mmfteam/folder634261730/master/sshxray-main/akses | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else

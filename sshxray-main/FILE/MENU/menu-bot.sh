@@ -11,7 +11,7 @@ COLBG1="$(cat /etc/alexxa/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ /
 WH='\033[1;37m'                  
 ###########- END COLOR CODE -##########
 
-ipes=$(curl -sS mmfteam.me/ip.php)
+ipes=$(curl -sS ipv4.icanhazip.com)
 [[ ! -f /usr/bin/jq ]] && {
     red "Mengunduh file jq!"
     wget -q --no-check-certificate "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64" -O /usr/bin/jq
@@ -24,7 +24,7 @@ dircreate() {
 }
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/mmfteam/tollls/main/akses  > /root/tmp
+    curl -sS https://raw.githubusercontent.com/mmfteam/folder634261730/master/sshxray-main/akses  > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -41,9 +41,9 @@ BURIQ () {
     rm -f /root/tmp
 }
 
-MYIP=$(curl -sS mmfteam.me/ip.php)
-Name=$(curl -sS https://raw.githubusercontent.com/mmfteam/tollls/main/akses  | grep $MYIP | awk '{print $2}')
-Isadmin=$(curl -sS https://raw.githubusercontent.com/mmfteam/tollls/main/akses  | grep $MYIP | awk '{print $5}')
+MYIP=$(curl -sS ipv4.icanhazip.com)
+Name=$(curl -sS https://raw.githubusercontent.com/mmfteam/folder634261730/master/sshxray-main/akses  | grep $MYIP | awk '{print $2}')
+Isadmin=$(curl -sS https://raw.githubusercontent.com/mmfteam/folder634261730/master/sshxray-main/akses  | grep $MYIP | awk '{print $5}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -59,8 +59,8 @@ fi
 }
 
 PERMISSION () {
-    MYIP=$(curl -sS mmfteam.me/ip.php)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/mmfteam/tollls/main/akses  | awk '{print $4}' | grep $MYIP)
+    MYIP=$(curl -sS ipv4.icanhazip.com)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/mmfteam/folder634261730/master/sshxray-main/akses  | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -78,7 +78,7 @@ if [ "$res" = "Expired" ]; then
 Exp="\e[36mExpired\033[0m"
 rm -f /home/needupdate > /dev/null 2>&1
 else
-Exp=$(curl -sS https://raw.githubusercontent.com/mmfteam/tollls/main/akses  | grep $MYIP | awk '{print $3}')
+Exp=$(curl -sS https://raw.githubusercontent.com/mmfteam/folder634261730/master/sshxray-main/akses  | grep $MYIP | awk '{print $3}')
 fi
 
 function botonoff(){
